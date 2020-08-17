@@ -20,7 +20,7 @@ requirements:
     - pip
   run:
     - python >=3.5
-    - pyproj
+    - pyproj >=2
     - pandas
     - numpy >=1.16
     - geopandas
