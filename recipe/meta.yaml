@@ -10,6 +10,7 @@ source:
   sha256: 07945c0634ff57465e1f37515535751c358bcb03edab85840f6445b35afab137
 
 build:
+  # ppc isnt working. getting some unsat because of pyproj and geopandas
   noarch: python
   number: 0
   script: {{ PYTHON }} -m pip install . -vv
