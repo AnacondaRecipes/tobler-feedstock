@@ -1,5 +1,5 @@
 {% set name = "tobler" %}
-{% set version = "0.5.4" %}
+{% set version = "0.8.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 07945c0634ff57465e1f37515535751c358bcb03edab85840f6445b35afab137
+  sha256: 8eceaa704620778d7c770713c54a2667d3f5c0b9108cd2de429721cafeab8065
 
 build:
   # ppc isnt working. getting some unsat because of pyproj and geopandas
