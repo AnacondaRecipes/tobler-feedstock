@@ -16,12 +16,12 @@ build:
 
 requirements:
   host:
-    - python >=3.5
+    - python
     - pip
     - setuptools
     - wheel
   run:
-    - python >=3.5
+    - python
     - numpy
     - pandas
     - geopandas
