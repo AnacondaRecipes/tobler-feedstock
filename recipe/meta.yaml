@@ -6,35 +6,53 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 07945c0634ff57465e1f37515535751c358bcb03edab85840f6445b35afab137
+  noarch: python
+  url: https://github.com/pysal/{{ name }}/archive/refs/tags/v{{ version }}.tar.gz
+  sha256: 2c902fe2b708b9d6e8bbf461c25b8b9eb0d70f52ea88f560ace6a1a4267a5965
 
 build:
-  # ppc isnt working. getting some unsat because of pyproj and geopandas
-  noarch: python
-  number: 0
-  script: {{ PYTHON }} -m pip install . -vv
+  number: 1
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
 requirements:
   host:
-    - python >=3.5
+    - python
     - pip
+    - setuptools
+    - wheel
   run:
-    - python >=3.5
-    - pyproj >=2
+    - python
+    - numpy
     - pandas
-    - numpy >=1.16
     - geopandas
     - rasterio
-    - rasterstats
+    # <1.12 is because newer versions break the tests
+    # ImportError: cannot import name 'inf' from 'scipy'
+    - scipy <1.12
     - statsmodels
-    - scipy
-    - libpysal >=4.2.0
+    - rasterstats
+    - libpysal
     - tqdm
 
 test:
+  source_files:
+    - tobler/tests
+    - test_dasymetric.py
   imports:
     - tobler
+    - tobler.area_weighted
+    - tobler.dasymetric
+    - tobler.model
+    - tobler.util
+    - tobler.util.util
+  commands:
+    - pip check
+    - python -c "from importlib.metadata import version; assert(version('{{ name }}')=='{{ version }}')"
+    - pytest -v {{ignore_tests}} tobler/tests
+    - pytest -v test_dasymetric.py
+  requires:
+    - pip
+    - pytest
 
 about:
   home: https://github.com/pysal/tobler
@@ -44,8 +62,8 @@ about:
   summary: Tobler is a python package for areal interpolation, dasymetric mapping, and change of support.
   description: |
     Tobler is a python package for areal interpolation, dasymetric mapping, and change of support.
-  doc_url: https://pysal.org/tobler/
-  dev_url: https://github.com/pysal/tobler/
+  doc_url: https://pysal.org/tobler
+  dev_url: https://github.com/pysal/tobler
 
 extra:
   recipe-maintainers:
