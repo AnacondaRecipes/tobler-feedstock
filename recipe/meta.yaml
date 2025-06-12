@@ -6,22 +6,22 @@ package:
   version: {{ version }}
 
 source:
-  noarch: python
   url: https://github.com/pysal/{{ name }}/archive/refs/tags/v{{ version }}.tar.gz
   sha256: 2c902fe2b708b9d6e8bbf461c25b8b9eb0d70f52ea88f560ace6a1a4267a5965
 
 build:
+  noarch: python
   number: 1
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
 requirements:
   host:
-    - python
+    - python >=3.5
     - pip
     - setuptools
     - wheel
   run:
-    - python
+    - python >=3.5
     - numpy
     - pandas
     - geopandas
