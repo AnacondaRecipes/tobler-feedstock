@@ -27,7 +27,7 @@ requirements:
     - geopandas
     - rasterio
     # <1.12 is because newer versions break the tests
-    # ImportError: cannot import name 'inf' from 'scipy'
+    # ImportError: cannot import name 'inf' from 'scipy' -> inf is deprecated
     - scipy <1.12
     - statsmodels
     - rasterstats
@@ -48,7 +48,7 @@ test:
   commands:
     - pip check
     - python -c "from importlib.metadata import version; assert(version('{{ name }}')=='{{ version }}')"
-    - pytest -v {{ignore_tests}} tobler/tests
+    - pytest -v tobler/tests
     - pytest -v test_dasymetric.py
   requires:
     - pip
