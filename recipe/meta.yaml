@@ -26,9 +26,9 @@ requirements:
     - pandas
     - geopandas
     - rasterio
-    # <1.12 is because newer versions break the tests
+    # <1.13 is because newer versions break the tests
     # ImportError: cannot import name 'inf' from 'scipy' -> inf is deprecated
-    - scipy <1.12
+    - scipy <1.13
     - statsmodels
     - rasterstats
     - libpysal
