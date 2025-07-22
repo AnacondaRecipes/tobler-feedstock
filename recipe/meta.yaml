@@ -16,12 +16,12 @@ build:
 
 requirements:
   host:
-    - python
+    - python 3.9
     - pip
     - setuptools
     - wheel
   run:
-    - python
+    - python >=3.9
     - numpy
     - pandas
     - geopandas >=0.13
@@ -68,6 +68,8 @@ about:
   dev_url: https://github.com/pysal/tobler
 
 extra:
+  skip-lints:
+    - remove_python_pinning
   recipe-maintainers:
     - knaaptime
     - sjsrey

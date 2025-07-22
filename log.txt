@@ -1,0 +1,409 @@
+2025-07-22T09:13:58.4523+00:00    | INFO     |   Submitted for execution: PID: 31964
+2025-07-22T09:13:58.863096+00:00  | INFO     |   Downloading flow from GitHub storage - repo: 'anaconda-distribution/prefect-cookbook', path: 'cookbook/flows/feedstock_build_flow.py', ref: 'main'
+2025-07-22T09:14:00.113184+00:00  | INFO     |   Flow successfully downloaded. Using commit: d59bf5c33e0d3cbcedc6c6ec5492bbde8c8582d2
+2025-07-22T09:14:00.245347+00:00  | INFO     |   Beginning Flow run for 'Generic Feedstock Build'
+2025-07-22T09:14:02.072682+00:00  | INFO     |   Task 'folders': Starting task run...
+2025-07-22T09:14:02.203756+00:00  | INFO     |   Task 'folders': Finished task run for task with final state: 'Success'
+2025-07-22T09:14:02.303601+00:00  | INFO     |   Task 'pr_number': Starting task run...
+2025-07-22T09:14:02.422763+00:00  | INFO     |   Task 'pr_number': Finished task run for task with final state: 'Success'
+2025-07-22T09:14:02.492925+00:00  | INFO     |   Task 'dispatch_id': Starting task run...
+2025-07-22T09:14:02.621577+00:00  | INFO     |   Task 'dispatch_id': Finished task run for task with final state: 'Success'
+2025-07-22T09:14:02.69105+00:00   | INFO     |   Task 'flowrun_directory': Starting task run...
+2025-07-22T09:14:02.755207+00:00  | INFO     |   Created flowrun directory '/tmp/abs_f851_9z5vy'
+2025-07-22T09:14:02.8228+00:00    | INFO     |   Task 'flowrun_directory': Finished task run for task with final state: 'Success'
+2025-07-22T09:14:02.888683+00:00  | INFO     |   Task 'upload': Starting task run...
+2025-07-22T09:14:03.020429+00:00  | INFO     |   Task 'upload': Finished task run for task with final state: 'Success'
+2025-07-22T09:14:03.088502+00:00  | INFO     |   Task 'base_branch': Starting task run...
+2025-07-22T09:14:03.209228+00:00  | INFO     |   Task 'base_branch': Finished task run for task with final state: 'Success'
+2025-07-22T09:14:03.27562+00:00   | INFO     |   Task 'git_ref': Starting task run...
+2025-07-22T09:14:03.395131+00:00  | INFO     |   Task 'git_ref': Finished task run for task with final state: 'Success'
+2025-07-22T09:14:03.465657+00:00  | INFO     |   Task 'is_private': Starting task run...
+2025-07-22T09:14:03.588939+00:00  | INFO     |   Task 'is_private': Finished task run for task with final state: 'Success'
+2025-07-22T09:14:03.657113+00:00  | INFO     |   Task 'docker_platform': Starting task run...
+2025-07-22T09:14:03.779156+00:00  | INFO     |   Task 'docker_platform': Finished task run for task with final state: 'Success'
+2025-07-22T09:14:03.843472+00:00  | INFO     |   Task 'create_subdirectory': Starting task run...
+2025-07-22T09:14:03.904171+00:00  | INFO     |   Created directory '/tmp/abs_f851_9z5vy/clone'
+2025-07-22T09:14:03.95995+00:00   | INFO     |   Task 'create_subdirectory': Finished task run for task with final state: 'Success'
+2025-07-22T09:14:04.031952+00:00  | INFO     |   Task 'pbp_upload': Starting task run...
+2025-07-22T09:14:04.155576+00:00  | INFO     |   Task 'pbp_upload': Finished task run for task with final state: 'Success'
+2025-07-22T09:14:04.220426+00:00  | INFO     |   Task 'case(True)': Starting task run...
+2025-07-22T09:14:04.277595+00:00  | INFO     |   SKIP signal raised: SKIP('Provided value "False" did not match "True"')
+2025-07-22T09:14:04.337238+00:00  | INFO     |   Task 'case(True)': Finished task run for task with final state: 'Skipped'
+2025-07-22T09:14:05.034519+00:00  | INFO     |   Task 'feedstock_name': Starting task run...
+2025-07-22T09:14:05.149184+00:00  | INFO     |   Task 'feedstock_name': Finished task run for task with final state: 'Success'
+2025-07-22T09:14:05.21386+00:00   | INFO     |   Task 'update_status': Starting task run...
+2025-07-22T09:14:05.330471+00:00  | INFO     |   Task 'update_status': Finished task run for task with final state: 'Success'
+2025-07-22T09:14:05.42644+00:00   | INFO     |   Task 'ignore_skip_existing': Starting task run...
+2025-07-22T09:14:05.544805+00:00  | INFO     |   Task 'ignore_skip_existing': Finished task run for task with final state: 'Success'
+2025-07-22T09:14:05.611606+00:00  | INFO     |   Task 'remove_intermediate_files': Starting task run...
+2025-07-22T09:14:05.724211+00:00  | INFO     |   Task 'remove_intermediate_files': Finished task run for task with final state: 'Success'
+2025-07-22T09:14:05.796574+00:00  | INFO     |   Task 'create_subdirectory': Starting task run...
+2025-07-22T09:14:05.855492+00:00  | INFO     |   Created directory '/tmp/abs_f851_9z5vy/pkg_dirs'
+2025-07-22T09:14:05.90481+00:00   | INFO     |   Task 'create_subdirectory': Finished task run for task with final state: 'Success'
+2025-07-22T09:14:05.976511+00:00  | INFO     |   Task 'user': Starting task run...
+2025-07-22T09:14:06.092523+00:00  | INFO     |   Task 'user': Finished task run for task with final state: 'Success'
+2025-07-22T09:14:06.168438+00:00  | INFO     |   Task 'conda_version_info': Starting task run...
+2025-07-22T09:14:06.229728+00:00  | INFO     |   Conda command: conda --version ; conda build --version ; cph --version
+2025-07-22T09:14:07.31807+00:00   | INFO     |   Removing file /tmp/abs_prefect-1iqskpq7
+2025-07-22T09:14:07.318658+00:00  | INFO     |   Conda version Info: ['conda 25.5.1', 'conda-build 25.5.0', 'conda-package-handling 2.4.0']
+2025-07-22T09:14:07.373405+00:00  | INFO     |   Task 'conda_version_info': Finished task run for task with final state: 'Success'
+2025-07-22T09:14:07.440041+00:00  | INFO     |   Task 'create_subdirectory': Starting task run...
+2025-07-22T09:14:07.771944+00:00  | INFO     |   Created directory '/tmp/abs_f851_9z5vy/croot'
+2025-07-22T09:14:07.825174+00:00  | INFO     |   Task 'create_subdirectory': Finished task run for task with final state: 'Success'
+2025-07-22T09:14:07.905785+00:00  | INFO     |   Task 'info': Starting task run...
+2025-07-22T09:14:07.967425+00:00  | INFO     |   Cookbook version: '0+unknown'
+2025-07-22T09:14:07.967663+00:00  | INFO     |   len(pending_logs)/pending_length/queue-size:0/0/30
+2025-07-22T09:14:07.967776+00:00  | INFO     |   Using parameters: {"docker_platform": "", "ignore_skip_existing": false, "recipe_folders": ["recipe"], "pr_number": 4, "is_private": false, "base_branch": "master", "dispatch_id": "73747e2d-de0f-4917-8543-da10c6c8c777", "update_status": true, "git_ref": "25fac909654a98ffd71422acb0363863959e4fb4", "upload": false, "feedstock_name": "tobler-feedstock", "user": "vchychyrko-chychyrko", "remove_intermediate_files": true}
+2025-07-22T09:14:07.971415+00:00  | INFO     |   Getting github rate info
+2025-07-22T09:14:08.193677+00:00  | INFO     |   Info data : {'docker_platform': '', 'ignore_skip_existing': False, 'recipe_folders': ['recipe'], 'pr_number': 4, 'is_private': False, 'base_branch': 'master', 'dispatch_id': '73747e2d-de0f-4917-8543-da10c6c8c777', 'update_status': True, 'git_ref': '25fac909654a98ffd71422acb0363863959e4fb4', 'upload': False, 'feedstock_name': 'tobler-feedstock', 'user': 'vchychyrko-chychyrko', 'remove_intermediate_files': True, 'platform': 'Linux-5.10.238-234.956.amzn2.x86_64-x86_64-with-glibc2.26', 'rate-limit': '5000', 'rate-used': '142', 'rate-remaining': '4858'}
+2025-07-22T09:14:08.253736+00:00  | INFO     |   Task 'info': Finished task run for task with final state: 'Success'
+2025-07-22T09:14:08.34667+00:00   | INFO     |   Task 'case(True)': Starting task run...
+2025-07-22T09:14:08.46821+00:00   | INFO     |   Task 'case(True)': Finished task run for task with final state: 'Success'
+2025-07-22T09:14:08.538715+00:00  | INFO     |   Task 'create_subdirectory': Starting task run...
+2025-07-22T09:14:08.601599+00:00  | INFO     |   Created directory '/tmp/abs_f851_9z5vy/src_cache'
+2025-07-22T09:14:08.655833+00:00  | INFO     |   Task 'create_subdirectory': Finished task run for task with final state: 'Success'
+2025-07-22T09:14:08.724488+00:00  | INFO     |   Task 'create_subdirectory': Starting task run...
+2025-07-22T09:14:08.785345+00:00  | INFO     |   Created directory '/tmp/abs_f851_9z5vy/upload'
+2025-07-22T09:14:08.838884+00:00  | INFO     |   Task 'create_subdirectory': Finished task run for task with final state: 'Success'
+2025-07-22T09:14:08.904393+00:00  | INFO     |   Task 'case(True)': Starting task run...
+2025-07-22T09:14:08.965016+00:00  | INFO     |   Task 'case(True)': Finished task run for task with final state: 'Skipped'
+2025-07-22T09:14:09.031907+00:00  | INFO     |   Task 'case(True)': Starting task run...
+2025-07-22T09:14:09.090302+00:00  | INFO     |   SKIP signal raised: SKIP('Provided value "False" did not match "True"')
+2025-07-22T09:14:09.152632+00:00  | INFO     |   Task 'case(True)': Finished task run for task with final state: 'Skipped'
+2025-07-22T09:14:09.220834+00:00  | INFO     |   Task 'git_init': Starting task run...
+2025-07-22T09:14:09.280049+00:00  | INFO     |   Fetching tobler-feedstock ref/branch/tag/sha1 '25fac909654a98ffd71422acb0363863959e4fb4'
+2025-07-22T09:14:09.280257+00:00  | INFO     |   Get SHA from git ref
+2025-07-22T09:14:09.280361+00:00  | INFO     |   Github Status Report
+2025-07-22T09:14:09.280444+00:00  | INFO     |   Check if the build is new
+2025-07-22T09:14:09.425935+00:00  | INFO     |   Updating github status check
+2025-07-22T09:14:09.426174+00:00  | INFO     |   Setting status on tobler-feedstock 25fac909654a98ffd71422acb0363863959e4fb4 to pending
+2025-07-22T09:14:09.740659+00:00  | INFO     |   Request response code for github_status returned 201
+2025-07-22T09:14:09.74106+00:00   | INFO     |   Running command: git init "/tmp/abs_f851_9z5vy/clone"
+2025-07-22T09:14:09.748523+00:00  | INFO     |   hint: Using 'master' as the name for the initial branch. This default branch name
+2025-07-22T09:14:09.749938+00:00  | INFO     |   hint: is subject to change. To configure the initial branch name to use in all
+2025-07-22T09:14:09.751099+00:00  | INFO     |   hint: of your new repositories, which will suppress this warning, call:
+2025-07-22T09:14:09.752258+00:00  | INFO     |   hint:
+2025-07-22T09:14:09.753463+00:00  | INFO     |   hint: 	git config --global init.defaultBranch <name>
+2025-07-22T09:14:09.754729+00:00  | INFO     |   hint:
+2025-07-22T09:14:09.755923+00:00  | INFO     |   hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-07-22T09:14:09.757076+00:00  | INFO     |   hint: 'development'. The just-created branch can be renamed via this command:
+2025-07-22T09:14:09.758217+00:00  | INFO     |   hint:
+2025-07-22T09:14:09.75936+00:00   | INFO     |   hint: 	git branch -m <name>
+2025-07-22T09:14:09.760506+00:00  | INFO     |   Initialized empty Git repository in /tmp/abs_f851_9z5vy/clone/.git/
+2025-07-22T09:14:09.760641+00:00  | INFO     |   Removing file /tmp/abs_prefect-_ov6pud0
+2025-07-22T09:14:09.815872+00:00  | INFO     |   Task 'git_init': Finished task run for task with final state: 'Success'
+2025-07-22T09:14:09.883544+00:00  | INFO     |   Task 'case(True)': Starting task run...
+2025-07-22T09:14:09.945434+00:00  | INFO     |   Task 'case(True)': Finished task run for task with final state: 'Skipped'
+2025-07-22T09:14:10.013038+00:00  | INFO     |   Task 'git_add_origin': Starting task run...
+2025-07-22T09:14:10.069923+00:00  | INFO     |   Running command: git -C "/tmp/abs_f851_9z5vy/clone" remote add origin git@github.com:AnacondaRecipes/tobler-feedstock.git
+2025-07-22T09:14:10.076314+00:00  | INFO     |   Removing file /tmp/abs_prefect-w4q_9e1n
+2025-07-22T09:14:10.131329+00:00  | INFO     |   Task 'git_add_origin': Finished task run for task with final state: 'Success'
+2025-07-22T09:14:10.201721+00:00  | INFO     |   Task 'git_checkout': Starting task run...
+2025-07-22T09:14:10.262463+00:00  | INFO     |   Running command: ('git -C "/tmp/abs_f851_9z5vy/clone" fetch origin 25fac909654a98ffd71422acb0363863959e4fb4:pkg_build', 'git -C "/tmp/abs_f851_9z5vy/clone" checkout pkg_build')
+2025-07-22T09:14:10.362195+00:00  | INFO     |   Identity added: (stdin) (Anaconda-pkg-build key 2024-03-15 - SIR-884)
+2025-07-22T09:14:10.374275+00:00  | INFO     |   Warning: Permanently added 'github.com,140.82.112.3' (ECDSA) to the list of known hosts.
+2025-07-22T09:14:10.685183+00:00  | INFO     |   From github.com:AnacondaRecipes/tobler-feedstock
+2025-07-22T09:14:10.686553+00:00  | INFO     |    * [new ref]         25fac909654a98ffd71422acb0363863959e4fb4 -> pkg_build
+2025-07-22T09:14:10.68843+00:00   | INFO     |   Switched to branch 'pkg_build'
+2025-07-22T09:14:10.688788+00:00  | INFO     |   Removing file /tmp/abs_prefect-pncj4169
+2025-07-22T09:14:10.746533+00:00  | INFO     |   Task 'git_checkout': Finished task run for task with final state: 'Success'
+2025-07-22T09:14:10.820706+00:00  | INFO     |   Task 'git_get_head_commit': Starting task run...
+2025-07-22T09:14:10.891239+00:00  | INFO     |   Removing file /tmp/abs_prefect-urnti82a
+2025-07-22T09:14:10.891755+00:00  | INFO     |   Git head is at 25fac909654a98ffd71422acb0363863959e4fb4
+2025-07-22T09:14:10.89192+00:00   | INFO     |   Github Status Report
+2025-07-22T09:14:10.892041+00:00  | INFO     |   Check if the build is new
+2025-07-22T09:14:11.063318+00:00  | INFO     |   Updating github status check
+2025-07-22T09:14:11.063629+00:00  | INFO     |   Setting status on tobler-feedstock 25fac909654a98ffd71422acb0363863959e4fb4 to pending
+2025-07-22T09:14:11.466504+00:00  | INFO     |   Request response code for github_status returned 201
+2025-07-22T09:14:11.530638+00:00  | INFO     |   Task 'git_get_head_commit': Finished task run for task with final state: 'Success'
+2025-07-22T09:14:11.611017+00:00  | INFO     |   Task 'git_get_short_commit': Starting task run...
+2025-07-22T09:14:11.693338+00:00  | INFO     |   Removing file /tmp/abs_prefect-7zmttzlv
+2025-07-22T09:14:11.693818+00:00  | INFO     |   Git short head is 25fac90
+2025-07-22T09:14:11.752436+00:00  | INFO     |   Task 'git_get_short_commit': Finished task run for task with final state: 'Success'
+2025-07-22T09:14:11.821808+00:00  | INFO     |   Task 'config': Starting task run...
+2025-07-22T09:14:11.89144+00:00   | INFO     |   Skipping config file /tmp/abs_f851_9z5vy/clone/abs.yaml
+2025-07-22T09:14:11.891723+00:00  | INFO     |   Skipping config file /tmp/abs_f851_9z5vy/clone/.abs.d/abs.pr4.yaml
+2025-07-22T09:14:11.946698+00:00  | INFO     |   Task 'config': Finished task run for task with final state: 'Success'
+2025-07-22T09:14:13.742443+00:00  | INFO     |   Task 'ensure_aggregate': Starting task run...
+2025-07-22T09:14:13.808713+00:00  | INFO     |   Running command: git clone -b master --depth 1 git@github.com:AnacondaRecipes/aggregate.git "/tmp/abs_f851_9z5vy/clone/.abs"
+2025-07-22T09:14:13.867038+00:00  | INFO     |   Identity added: (stdin) (Anaconda-pkg-build key 2024-03-15 - SIR-884)
+2025-07-22T09:14:13.868529+00:00  | INFO     |   Cloning into '/tmp/abs_f851_9z5vy/clone/.abs'...
+2025-07-22T09:14:13.880008+00:00  | INFO     |   Warning: Permanently added 'github.com,140.82.112.3' (ECDSA) to the list of known hosts.
+2025-07-22T09:14:14.194617+00:00  | INFO     |   Removing file /tmp/abs_prefect-r50locru
+2025-07-22T09:14:14.254964+00:00  | INFO     |   Task 'ensure_aggregate': Finished task run for task with final state: 'Success'
+2025-07-22T09:14:14.329197+00:00  | INFO     |   Task 'compare_aggregate_ref': Starting task run...
+2025-07-22T09:14:14.455201+00:00  | INFO     |   DEFAULT does not have a branch/url in .gitmodules
+2025-07-22T09:14:14.517689+00:00  | INFO     |   Task 'compare_aggregate_ref': Finished task run for task with final state: 'Success'
+2025-07-22T09:14:14.588865+00:00  | INFO     |   Task 'build_order': Starting task run...
+2025-07-22T09:14:14.707521+00:00  | INFO     |   Task 'build_order': Finished task run for task with final state: 'Success'
+2025-07-22T09:14:14.77342+00:00   | INFO     |   Task 'pbp_create': Starting task run...
+2025-07-22T09:14:14.837564+00:00  | INFO     |   Task 'pbp_create': Finished task run for task with final state: 'Skipped'
+2025-07-22T09:14:14.902377+00:00  | INFO     |   Task 'pbp_create': Starting task run...
+2025-07-22T09:14:14.96266+00:00   | INFO     |   Task 'pbp_create': Finished task run for task with final state: 'Skipped'
+2025-07-22T09:14:15.032386+00:00  | INFO     |   Task 'build': Starting task run...
+2025-07-22T09:14:15.096057+00:00  | INFO     |   Building /tmp/abs_f851_9z5vy/clone
+2025-07-22T09:14:15.096385+00:00  | INFO     |   Github Status Report
+2025-07-22T09:14:15.096586+00:00  | INFO     |   Check if the build is new
+2025-07-22T09:14:15.298239+00:00  | INFO     |   Updating github status check
+2025-07-22T09:14:15.298614+00:00  | INFO     |   Setting status on tobler-feedstock 25fac909654a98ffd71422acb0363863959e4fb4 to pending
+2025-07-22T09:14:15.784197+00:00  | INFO     |   Request response code for github_status returned 201
+2025-07-22T09:14:16.264349+00:00  | INFO     |   Removing file /tmp/abs_prefect-w8v6kuyg
+2025-07-22T09:14:16.265074+00:00  | INFO     |   Posting Event to Datadog
+2025-07-22T09:14:16.337591+00:00  | INFO     |   Datadog Response {'status': 'ok', 'event': {'id': 8202595488624941681, 'id_str': '8202595488624941681', 'title': 'Build Started', 'text': 'Executing build', 'date_happened': 1753175656, 'handle': None, 'priority': None, 'related_event_id': None, 'tags': ['platform:linux-64', 'application:rocket-platform', 'flow_run:f84fe8f7-04e6-4f56-b61f-e4e27d727664', 'feedstock:tobler-feedstock', 'pr_number:4'], 'url': 'https://app.datadoghq.com/event/event?id=8202595488624941681'}}
+2025-07-22T09:14:16.337969+00:00  | INFO     |   Calling integrated build logic for recipe
+2025-07-22T09:14:16.343188+00:00  | INFO     |   Skipping config file /tmp/abs_f851_9z5vy/clone/abs.yaml
+2025-07-22T09:14:16.343421+00:00  | INFO     |   Skipping config file /tmp/abs_f851_9z5vy/clone/recipe/abs.yaml
+2025-07-22T09:14:16.343635+00:00  | INFO     |   Skipping config file /tmp/abs_f851_9z5vy/clone/.abs.d/abs.pr4.yaml
+2025-07-22T09:14:16.343828+00:00  | INFO     |   Using the following configuration: {"aggregate_branch": "master", "aggregate_ref": "", "aggregate_check": true, "pkg_build_image_name": "public.ecr.aws/y0o4y9o3/anaconda-pkg-build", "pkg_build_image_tag": "latest", "build_parameters": ["--suppress-variables", "--skip-existing", "--error-overlinking"], "build_order": [], "channels": [], "upload_channels": ["defaults"], "upload_without_merge": false, "mark_private": false, "update_aggregate": false, "noarch_upload": ["linux-64"], "extra_labels_for_os": null, "staging_channel_upload_target": null, "upload_to_staging_channel_in_pr": true, "content_signing": {"win-64": true}, "use_prefect_platforms": null, "pbp_autopublish": false, "pbp_only_deployment": null}
+2025-07-22T09:14:16.344159+00:00  | INFO     |   Running command: ['docker', 'run', '--init', '--rm', '-e CPU_COUNT=3', '--cpus=3', '--platform=linux/amd64', '-e', 'GITHUB_CLONE_SECRET', '-v', '/tmp/abs_f851_9z5vy/clone:/feedstock', '-v', '/tmp/abs_f851_9z5vy/upload:/upload', '-v', '/tmp/abs_f851_9z5vy/src_cache:/src_cache', '-v', '/tmp/abs_f851_9z5vy/croot:/croot', '-w', '/feedstock/.abs', 'public.ecr.aws/y0o4y9o3/anaconda-pkg-build:latest', '/bin/bash', '-c', '\'conda build "/feedstock/recipe" --output-folder "/upload" --cache-dir "/src_cache" --extra-meta "sha=25fac909654a98ffd71422acb0363863959e4fb4" "remote_url=git@github.com:AnacondaRecipes/tobler-feedstock.git" "flow_run_id=f84fe8f7-04e6-4f56-b61f-e4e27d727664" --suppress-variables --skip-existing --error-overlinking --croot "/croot"\'']
+2025-07-22T09:14:17.086699+00:00  | INFO     |   WARNING: No numpy version specified in conda_build_config.yaml.  Falling back to default numpy value of 1.22
+2025-07-22T09:14:17.140306+00:00  | INFO     |   Adding in variants from internal_defaults
+2025-07-22T09:14:17.141673+00:00  | INFO     |   Adding in variants from /feedstock/.abs/conda_build_config.yaml
+2025-07-22T09:14:17.324734+00:00  | INFO     |   Attempting to finalize metadata for tobler
+2025-07-22T09:14:26.774447+00:00  | INFO     |   Reloading output folder: ...working... done
+2025-07-22T09:14:26.827023+00:00  | INFO     |   Getting pinned dependencies: ...working... done
+2025-07-22T09:14:29.262168+00:00  | INFO     |   Reloading output folder: ...working... done
+2025-07-22T09:14:29.308053+00:00  | INFO     |   Getting pinned dependencies: ...working... done
+2025-07-22T09:14:29.335484+00:00  | INFO     |   Indexing ['linux-64'] does not include 'noarch'
+2025-07-22T09:14:29.336877+00:00  | INFO     |   
+2025-07-22T09:14:29.364559+00:00  | INFO     |   Indexing ['linux-64'] does not include 'noarch'
+2025-07-22T09:14:29.365936+00:00  | INFO     |   
+2025-07-22T09:14:29.430503+00:00  | INFO     |   BUILD START: ['tobler-0.12.1-py313h06a4308_1.tar.bz2']
+2025-07-22T09:14:29.431875+00:00  | INFO     |   Channels:
+2025-07-22T09:14:29.433134+00:00  | INFO     |    - file:///upload
+2025-07-22T09:14:29.434388+00:00  | INFO     |    - defaults
+2025-07-22T09:14:29.43559+00:00   | INFO     |   Platform: linux-64
+2025-07-22T09:14:32.169909+00:00  | INFO     |   Collecting package metadata (repodata.json): ...working... done
+2025-07-22T09:14:32.212251+00:00  | INFO     |   Solving environment: ...working... done
+2025-07-22T09:14:33.5523+00:00    | INFO     |   
+2025-07-22T09:14:33.553653+00:00  | INFO     |   ## Package Plan ##
+2025-07-22T09:14:33.554853+00:00  | INFO     |   
+2025-07-22T09:14:33.556008+00:00  | INFO     |     environment location: /croot/tobler_1753175657096/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_
+2025-07-22T09:14:33.557161+00:00  | INFO     |   
+2025-07-22T09:14:33.558302+00:00  | INFO     |   
+2025-07-22T09:14:33.559446+00:00  | INFO     |   The following NEW packages will be INSTALLED:
+2025-07-22T09:14:33.560605+00:00  | INFO     |   
+2025-07-22T09:14:33.561751+00:00  | INFO     |       _libgcc_mutex:    0.1-main                  defaults
+2025-07-22T09:14:33.562873+00:00  | INFO     |       _openmp_mutex:    5.1-1_gnu                 defaults
+2025-07-22T09:14:33.564153+00:00  | INFO     |       bzip2:            1.0.8-h5eee18b_6          defaults
+2025-07-22T09:14:33.565341+00:00  | INFO     |       ca-certificates:  2025.2.25-h06a4308_0      defaults
+2025-07-22T09:14:33.566521+00:00  | INFO     |       expat:            2.7.1-h6a678d5_0          defaults
+2025-07-22T09:14:33.567709+00:00  | INFO     |       ld_impl_linux-64: 2.40-h12ee557_0           defaults
+2025-07-22T09:14:33.568878+00:00  | INFO     |       libffi:           3.4.4-h6a678d5_1          defaults
+2025-07-22T09:14:33.57004+00:00   | INFO     |       libgcc-ng:        11.2.0-h1234567_1         defaults
+2025-07-22T09:14:33.571222+00:00  | INFO     |       libgomp:          11.2.0-h1234567_1         defaults
+2025-07-22T09:14:33.572384+00:00  | INFO     |       libmpdec:         4.0.0-h5eee18b_0          defaults
+2025-07-22T09:14:33.573554+00:00  | INFO     |       libstdcxx-ng:     11.2.0-h1234567_1         defaults
+2025-07-22T09:14:33.57471+00:00   | INFO     |       libuuid:          1.41.5-h5eee18b_0         defaults
+2025-07-22T09:14:33.575871+00:00  | INFO     |       libxcb:           1.17.0-h9b100fa_0         defaults
+2025-07-22T09:14:33.577023+00:00  | INFO     |       ncurses:          6.4-h6a678d5_0            defaults
+2025-07-22T09:14:33.578174+00:00  | INFO     |       openssl:          3.0.16-h5eee18b_0         defaults
+2025-07-22T09:14:33.579339+00:00  | INFO     |       pip:              25.1-pyhc872135_2         defaults
+2025-07-22T09:14:33.580494+00:00  | INFO     |       pthread-stubs:    0.3-h0ce48e5_1            defaults
+2025-07-22T09:14:33.58166+00:00   | INFO     |       python:           3.13.5-h4612cfd_100_cp313 defaults
+2025-07-22T09:14:33.582812+00:00  | INFO     |       python_abi:       3.13-0_cp313              defaults
+2025-07-22T09:14:33.583972+00:00  | INFO     |       readline:         8.2-h5eee18b_0            defaults
+2025-07-22T09:14:33.585143+00:00  | INFO     |       setuptools:       78.1.1-py313h06a4308_0    defaults
+2025-07-22T09:14:33.586296+00:00  | INFO     |       sqlite:           3.50.2-hb25bd0a_1         defaults
+2025-07-22T09:14:33.587445+00:00  | INFO     |       tk:               8.6.14-h993c535_1         defaults
+2025-07-22T09:14:33.588594+00:00  | INFO     |       tzdata:           2025b-h04d1e81_0          defaults
+2025-07-22T09:14:33.589766+00:00  | INFO     |       wheel:            0.45.1-py313h06a4308_0    defaults
+2025-07-22T09:14:33.591036+00:00  | INFO     |       xorg-libx11:      1.8.12-h9b100fa_1         defaults
+2025-07-22T09:14:33.592274+00:00  | INFO     |       xorg-libxau:      1.0.12-h9b100fa_0         defaults
+2025-07-22T09:14:33.593494+00:00  | INFO     |       xorg-libxdmcp:    1.1.5-h9b100fa_0          defaults
+2025-07-22T09:14:33.594705+00:00  | INFO     |       xorg-xorgproto:   2024.1-h5eee18b_1         defaults
+2025-07-22T09:14:33.595917+00:00  | INFO     |       xz:               5.6.4-h5eee18b_1          defaults
+2025-07-22T09:14:33.597126+00:00  | INFO     |       zlib:             1.2.13-h5eee18b_1         defaults
+2025-07-22T09:14:33.598329+00:00  | INFO     |   
+2025-07-22T09:14:33.756718+00:00  | INFO     |   Preparing transaction: ...working... done
+2025-07-22T09:14:35.580709+00:00  | INFO     |   Verifying transaction: ...working... done
+2025-07-22T09:14:37.263007+00:00  | INFO     |   Executing transaction: ...working... done
+2025-07-22T09:14:37.337882+00:00  | INFO     |   Channels:
+2025-07-22T09:14:37.339283+00:00  | INFO     |    - file:///upload
+2025-07-22T09:14:37.340526+00:00  | INFO     |    - defaults
+2025-07-22T09:14:37.341813+00:00  | INFO     |   Platform: linux-64
+2025-07-22T09:14:39.916927+00:00  | INFO     |   Collecting package metadata (repodata.json): ...working... done
+2025-07-22T09:14:41.444002+00:00  | INFO     |   Solving environment: ...working... failed
+2025-07-22T09:14:41.500977+00:00  | INFO     |   
+2025-07-22T09:14:41.50249+00:00   | INFO     |   # >>>>>>>>>>>>>>>>>>>>>> ERROR REPORT <<<<<<<<<<<<<<<<<<<<<<
+2025-07-22T09:14:41.503874+00:00  | INFO     |   
+2025-07-22T09:14:41.505197+00:00  | INFO     |       Traceback (most recent call last):
+2025-07-22T09:14:41.506494+00:00  | INFO     |         File "/opt/conda/lib/python3.9/site-packages/conda_build/environ.py", line 926, in get_package_records
+2025-07-22T09:14:41.507785+00:00  | INFO     |           actions = _install_actions(prefix, index, specs)
+2025-07-22T09:14:41.509069+00:00  | INFO     |         File "/opt/conda/lib/python3.9/site-packages/conda_build/environ.py", line 1375, in install_actions
+2025-07-22T09:14:41.510362+00:00  | INFO     |           txn = solver.solve_for_transaction(prune=False, ignore_pinned=False)
+2025-07-22T09:14:41.511655+00:00  | INFO     |         File "/opt/conda/lib/python3.9/site-packages/conda/core/solve.py", line 148, in solve_for_transaction
+2025-07-22T09:14:41.512941+00:00  | INFO     |           unlink_precs, link_precs = self.solve_for_diff(
+2025-07-22T09:14:41.514229+00:00  | INFO     |         File "/opt/conda/lib/python3.9/site-packages/conda/core/solve.py", line 217, in solve_for_diff
+2025-07-22T09:14:41.515511+00:00  | INFO     |           final_precs = self.solve_final_state(
+2025-07-22T09:14:41.516809+00:00  | INFO     |         File "/opt/conda/lib/python3.9/site-packages/conda_libmamba_solver/solver.py", line 223, in solve_final_state
+2025-07-22T09:14:41.518096+00:00  | INFO     |           out_state = self._solving_loop(in_state, out_state, index)
+2025-07-22T09:14:41.519389+00:00  | INFO     |         File "/opt/conda/lib/python3.9/site-packages/conda_libmamba_solver/solver.py", line 341, in _solving_loop
+2025-07-22T09:14:41.5207+00:00    | INFO     |           raise exc
+2025-07-22T09:14:41.521961+00:00  | INFO     |       conda_libmamba_solver.exceptions.LibMambaUnsatisfiableError: Encountered problems while solving:
+2025-07-22T09:14:41.523213+00:00  | INFO     |         - package scipy-0.19.1-py27_nomklhda24f63_3 requires python >=2.7,<2.8.0a0, but none of the providers can be installed
+2025-07-22T09:14:41.524458+00:00  | INFO     |   
+2025-07-22T09:14:41.525702+00:00  | INFO     |       Could not solve for environment specs
+2025-07-22T09:14:41.526951+00:00  | INFO     |       The following packages are incompatible
+2025-07-22T09:14:41.528244+00:00  | INFO     |       ├─ python_abi 3.13* *_cp313 is installable and it requires
+2025-07-22T09:14:41.529533+00:00  | INFO     |       │  └─ python 3.13.* *_cp313, which can be installed;
+2025-07-22T09:14:41.530826+00:00  | INFO     |       └─ scipy <1.13  is not installable because there are no viable options
+2025-07-22T09:14:41.532111+00:00  | INFO     |          ├─ scipy [0.19.1|1.0.0|...|1.2.1] would require
+2025-07-22T09:14:41.533417+00:00  | INFO     |          │  └─ python >=2.7,<2.8.0a0 , which conflicts with any installable versions previously reported;
+2025-07-22T09:14:41.534714+00:00  | INFO     |          ├─ scipy [0.19.1|1.0.0|1.0.1|1.1.0] would require
+2025-07-22T09:14:41.536007+00:00  | INFO     |          │  └─ python >=3.5,<3.6.0a0 , which conflicts with any installable versions previously reported;
+2025-07-22T09:14:41.537319+00:00  | INFO     |          ├─ scipy [0.19.1|1.0.0|...|1.5.2] would require
+2025-07-22T09:14:41.538608+00:00  | INFO     |          │  └─ python >=3.6,<3.7.0a0 , which conflicts with any installable versions previously reported;
+2025-07-22T09:14:41.53991+00:00   | INFO     |          ├─ scipy [1.1.0|1.2.0|...|1.7.3] would require
+2025-07-22T09:14:41.541124+00:00  | INFO     |          │  └─ python >=3.7,<3.8.0a0 , which conflicts with any installable versions previously reported;
+2025-07-22T09:14:41.542288+00:00  | INFO     |          ├─ scipy [1.10.0|1.10.1|...|1.9.3] would require
+2025-07-22T09:14:41.54344+00:00   | INFO     |          │  └─ python >=3.10,<3.11.0a0 , which conflicts with any installable versions previously reported;
+2025-07-22T09:14:41.544589+00:00  | INFO     |          ├─ scipy [1.10.0|1.10.1|...|1.9.3] would require
+2025-07-22T09:14:41.545749+00:00  | INFO     |          │  └─ python >=3.11,<3.12.0a0 , which conflicts with any installable versions previously reported;
+2025-07-22T09:14:41.546902+00:00  | INFO     |          ├─ scipy [1.10.0|1.10.1|...|1.9.3] would require
+2025-07-22T09:14:41.548055+00:00  | INFO     |          │  └─ python >=3.8,<3.9.0a0 , which conflicts with any installable versions previously reported;
+2025-07-22T09:14:41.549207+00:00  | INFO     |          ├─ scipy [1.10.0|1.10.1|...|1.9.3] would require
+2025-07-22T09:14:41.550357+00:00  | INFO     |          │  └─ python >=3.9,<3.10.0a0 , which conflicts with any installable versions previously reported;
+2025-07-22T09:14:41.551515+00:00  | INFO     |          └─ scipy [1.11.3|1.11.4|1.12.0] would require
+2025-07-22T09:14:41.552682+00:00  | INFO     |             └─ python >=3.12,<3.13.0a0 , which conflicts with any installable versions previously reported.
+2025-07-22T09:14:41.553834+00:00  | INFO     |   
+2025-07-22T09:14:41.554984+00:00  | INFO     |       During handling of the above exception, another exception occurred:
+2025-07-22T09:14:41.556138+00:00  | INFO     |   
+2025-07-22T09:14:41.557288+00:00  | INFO     |       Traceback (most recent call last):
+2025-07-22T09:14:41.558436+00:00  | INFO     |         File "/opt/conda/lib/python3.9/site-packages/conda/exception_handler.py", line 17, in __call__
+2025-07-22T09:14:41.559598+00:00  | INFO     |           return func(*args, **kwargs)
+2025-07-22T09:14:41.560751+00:00  | INFO     |         File "/opt/conda/lib/python3.9/site-packages/conda/cli/main.py", line 83, in main_subshell
+2025-07-22T09:14:41.561903+00:00  | INFO     |           exit_code = do_call(args, parser)
+2025-07-22T09:14:41.563054+00:00  | INFO     |         File "/opt/conda/lib/python3.9/site-packages/conda/cli/conda_argparse.py", line 172, in do_call
+2025-07-22T09:14:41.564201+00:00  | INFO     |           result = plugin_subcommand.action(getattr(args, "_args", args))
+2025-07-22T09:14:41.56535+00:00   | INFO     |         File "/opt/conda/lib/python3.9/site-packages/conda_build/plugin.py", line 14, in build
+2025-07-22T09:14:41.566501+00:00  | INFO     |           return execute(args)
+2025-07-22T09:14:41.567647+00:00  | INFO     |         File "/opt/conda/lib/python3.9/site-packages/conda_build/cli/main_build.py", line 581, in execute
+2025-07-22T09:14:41.568797+00:00  | INFO     |           api.build(
+2025-07-22T09:14:41.569942+00:00  | INFO     |         File "/opt/conda/lib/python3.9/site-packages/conda_build/api.py", line 255, in build
+2025-07-22T09:14:41.571084+00:00  | INFO     |           return build_tree(
+2025-07-22T09:14:41.572233+00:00  | INFO     |         File "/opt/conda/lib/python3.9/site-packages/conda_build/build.py", line 3782, in build_tree
+2025-07-22T09:14:41.573377+00:00  | INFO     |           packages_from_this = build(
+2025-07-22T09:14:41.574521+00:00  | INFO     |         File "/opt/conda/lib/python3.9/site-packages/conda_build/build.py", line 2557, in build
+2025-07-22T09:14:41.575665+00:00  | INFO     |           create_build_envs(top_level_pkg, notest)
+2025-07-22T09:14:41.576813+00:00  | INFO     |         File "/opt/conda/lib/python3.9/site-packages/conda_build/build.py", line 2393, in create_build_envs
+2025-07-22T09:14:41.57796+00:00   | INFO     |           raise e
+2025-07-22T09:14:41.579106+00:00  | INFO     |         File "/opt/conda/lib/python3.9/site-packages/conda_build/build.py", line 2364, in create_build_envs
+2025-07-22T09:14:41.580254+00:00  | INFO     |           environ.get_package_records(
+2025-07-22T09:14:41.581399+00:00  | INFO     |         File "/opt/conda/lib/python3.9/site-packages/conda_build/environ.py", line 928, in get_package_records
+2025-07-22T09:14:41.582546+00:00  | INFO     |           raise DependencyNeedsBuildingError(exc, subdir=subdir)
+2025-07-22T09:14:41.583695+00:00  | INFO     |       conda_build.exceptions.DependencyNeedsBuildingError: Unsatisfiable dependencies for platform linux-64: {'package scipy-0.19.1-py27_nomklhda24f63_3 requires python >=2.7,<2.8.0a0, but none of the providers can be installed'}
+2025-07-22T09:14:41.584847+00:00  | INFO     |   
+2025-07-22T09:14:41.585994+00:00  | INFO     |   `$ /opt/conda/bin/conda build /feedstock/recipe --output-folder /upload --cache-dir /src_cache --extra-meta sha=25fac909654a98ffd71422acb0363863959e4fb4 remote_url=git@github.com:AnacondaRecipes/tobler-feedstock.git flow_run_id=f84fe8f7-04e6-4f56-b61f-e4e27d727664 --suppress-variables --skip-existing --error-overlinking --croot /croot`
+2025-07-22T09:14:41.587173+00:00  | INFO     |   
+2025-07-22T09:14:41.588477+00:00  | INFO     |     environment variables:
+2025-07-22T09:14:41.589787+00:00  | INFO     |                    CIO_TEST=<not set>
+2025-07-22T09:14:41.591078+00:00  | INFO     |       CONDA_ALLOW_SOFTLINKS=false
+2025-07-22T09:14:41.59238+00:00   | INFO     |                  CONDA_ROOT=/opt/conda
+2025-07-22T09:14:41.593674+00:00  | INFO     |              CURL_CA_BUNDLE=<not set>
+2025-07-22T09:14:41.594973+00:00  | INFO     |                  LD_PRELOAD=<not set>
+2025-07-22T09:14:41.596272+00:00  | INFO     |                        PATH=/opt/conda/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin
+2025-07-22T09:14:41.597565+00:00  | INFO     |                             :/bin
+2025-07-22T09:14:41.598828+00:00  | INFO     |          REQUESTS_CA_BUNDLE=<not set>
+2025-07-22T09:14:41.600101+00:00  | INFO     |               SSL_CERT_FILE=<not set>
+2025-07-22T09:14:41.601389+00:00  | INFO     |   
+2025-07-22T09:14:41.602686+00:00  | INFO     |        active environment : None
+2025-07-22T09:14:41.603992+00:00  | INFO     |          user config file : /root/.condarc
+2025-07-22T09:14:41.605288+00:00  | INFO     |    populated config files : /opt/conda/.condarc
+2025-07-22T09:14:41.606585+00:00  | INFO     |             conda version : 24.1.2
+2025-07-22T09:14:41.607884+00:00  | INFO     |       conda-build version : 24.1.2
+2025-07-22T09:14:41.609178+00:00  | INFO     |            python version : 3.9.18.final.0
+2025-07-22T09:14:41.610484+00:00  | INFO     |                    solver : libmamba (default)
+2025-07-22T09:14:41.611782+00:00  | INFO     |          virtual packages : __archspec=1=icelake
+2025-07-22T09:14:41.613091+00:00  | INFO     |                             __conda=24.1.2=0
+2025-07-22T09:14:41.614388+00:00  | INFO     |                             __glibc=2.17=0
+2025-07-22T09:14:41.615579+00:00  | INFO     |                             __linux=5.10.238=0
+2025-07-22T09:14:41.616769+00:00  | INFO     |                             __unix=0=0
+2025-07-22T09:14:41.617944+00:00  | INFO     |          base environment : /opt/conda  (writable)
+2025-07-22T09:14:41.619113+00:00  | INFO     |         conda av data dir : /opt/conda/etc/conda
+2025-07-22T09:14:41.620255+00:00  | INFO     |     conda av metadata url : None
+2025-07-22T09:14:41.621595+00:00  | INFO     |              channel URLs : https://repo.anaconda.com/pkgs/main/linux-64
+2025-07-22T09:14:41.622784+00:00  | INFO     |                             https://repo.anaconda.com/pkgs/main/noarch
+2025-07-22T09:14:41.623965+00:00  | INFO     |                             https://repo.anaconda.com/pkgs/r/linux-64
+2025-07-22T09:14:41.625131+00:00  | INFO     |                             https://repo.anaconda.com/pkgs/r/noarch
+2025-07-22T09:14:41.626292+00:00  | INFO     |             package cache : /opt/conda/pkgs
+2025-07-22T09:14:41.627458+00:00  | INFO     |                             /root/.conda/pkgs
+2025-07-22T09:14:41.628646+00:00  | INFO     |          envs directories : /opt/conda/envs
+2025-07-22T09:14:41.629823+00:00  | INFO     |                             /root/.conda/envs
+2025-07-22T09:14:41.630987+00:00  | INFO     |                  platform : linux-64
+2025-07-22T09:14:41.632152+00:00  | INFO     |                user-agent : conda/24.1.2 requests/2.31.0 CPython/3.9.18 Linux/5.10.238-234.956.amzn2.x86_64 centos/7.9.2009 glibc/2.17 solver/libmamba conda-libmamba-solver/24.1.0 libmambapy/1.5.6
+2025-07-22T09:14:41.633329+00:00  | INFO     |                   UID:GID : 0:0
+2025-07-22T09:14:41.634506+00:00  | INFO     |                netrc file : None
+2025-07-22T09:14:41.635678+00:00  | INFO     |              offline mode : False
+2025-07-22T09:14:41.636846+00:00  | INFO     |   
+2025-07-22T09:14:41.638009+00:00  | INFO     |   
+2025-07-22T09:14:41.639185+00:00  | INFO     |   An unexpected error has occurred. Conda has prepared the above report.
+2025-07-22T09:14:41.64036+00:00   | INFO     |   If you suspect this error is being caused by a malfunctioning plugin,
+2025-07-22T09:14:41.641543+00:00  | INFO     |   consider using the --no-plugins option to turn off plugins.
+2025-07-22T09:14:41.64271+00:00   | INFO     |   
+2025-07-22T09:14:41.643887+00:00  | INFO     |   Example: conda --no-plugins install <package>
+2025-07-22T09:14:41.645055+00:00  | INFO     |   
+2025-07-22T09:14:41.646217+00:00  | INFO     |   Alternatively, you can set the CONDA_NO_PLUGINS environment variable on
+2025-07-22T09:14:41.647378+00:00  | INFO     |   the command line to run the command without plugins enabled.
+2025-07-22T09:14:41.648547+00:00  | INFO     |   
+2025-07-22T09:14:41.649708+00:00  | INFO     |   Example: CONDA_NO_PLUGINS=true conda install <package>
+2025-07-22T09:14:41.650868+00:00  | INFO     |   
+2025-07-22T09:14:41.652029+00:00  | INFO     |   
+2025-07-22T09:14:41.653187+00:00  | INFO     |   Leaving build/test directories:
+2025-07-22T09:14:41.654347+00:00  | INFO     |     Work:
+2025-07-22T09:14:41.655505+00:00  | INFO     |    /croot/work
+2025-07-22T09:14:41.656681+00:00  | INFO     |     Test:
+2025-07-22T09:14:41.657841+00:00  | INFO     |    /croot/test_tmp
+2025-07-22T09:14:41.658999+00:00  | INFO     |   Leaving build/test environments:
+2025-07-22T09:14:41.660155+00:00  | INFO     |     Test:
+2025-07-22T09:14:41.661311+00:00  | INFO     |   source activate  /croot/_test_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placeh
+2025-07-22T09:14:41.662474+00:00  | INFO     |     Build:
+2025-07-22T09:14:41.663635+00:00  | INFO     |   source activate  /croot/_build_env
+2025-07-22T09:14:41.664792+00:00  | INFO     |   
+2025-07-22T09:14:41.665949+00:00  | INFO     |   
+2025-07-22T09:14:46.609556+00:00  | ERROR    |   Command failed with exit code 1
+
+2025-07-22T09:14:46.609901+00:00  | INFO     |   Removing file /tmp/abs_prefect-w97jy0iw
+2025-07-22T09:14:46.610077+00:00  | INFO     |   Fixing docker permissions: docker run --rm --platform=linux/amd64 -v /tmp/abs_f851_9z5vy/upload:/upload -v /tmp/abs_f851_9z5vy/src_cache:/src_cache -v /tmp/abs_f851_9z5vy/croot:/croot public.ecr.aws/y0o4y9o3/anaconda-pkg-build:latest /bin/bash -c 'chmod -R 777 /upload /src_cache /croot'
+2025-07-22T09:14:47.122282+00:00  | INFO     |   Removing file /tmp/abs_prefect-gieowkg3
+2025-07-22T09:14:47.122942+00:00  | INFO     |   FAIL signal raised: FAIL('Command failed with exit code 1')
+2025-07-22T09:14:47.180351+00:00  | INFO     |   Task 'build': Finished task run for task with final state: 'Failed'
+2025-07-22T09:14:47.263425+00:00  | INFO     |   Task 'skipped': Starting task run...
+2025-07-22T09:14:47.331819+00:00  | INFO     |   Task 'skipped': Finished task run for task with final state: 'TriggerFailed'
+2025-07-22T09:14:47.400729+00:00  | INFO     |   Task 'case(False)': Starting task run...
+2025-07-22T09:14:47.468694+00:00  | INFO     |   Task 'case(False)': Finished task run for task with final state: 'TriggerFailed'
+2025-07-22T09:14:47.541121+00:00  | INFO     |   Task 'package_content_sign': Starting task run...
+2025-07-22T09:14:47.603169+00:00  | INFO     |   Task 'package_content_sign': Finished task run for task with final state: 'TriggerFailed'
+2025-07-22T09:14:47.675878+00:00  | INFO     |   Task 'transmute_package': Starting task run...
+2025-07-22T09:14:47.740419+00:00  | INFO     |   Task 'transmute_package': Finished task run for task with final state: 'TriggerFailed'
+2025-07-22T09:14:47.804666+00:00  | INFO     |   Task 'case(False)': Starting task run...
+2025-07-22T09:14:47.870456+00:00  | INFO     |   Task 'case(False)': Finished task run for task with final state: 'TriggerFailed'
+2025-07-22T09:14:47.937977+00:00  | INFO     |   Task 'docker_hash_info': Starting task run...
+2025-07-22T09:14:48.00438+00:00   | INFO     |   Task 'docker_hash_info': Finished task run for task with final state: 'TriggerFailed'
+2025-07-22T09:14:48.072045+00:00  | INFO     |   Task 'case(True)': Starting task run...
+2025-07-22T09:14:48.139247+00:00  | INFO     |   Task 'case(True)': Finished task run for task with final state: 'TriggerFailed'
+2025-07-22T09:14:48.20319+00:00   | INFO     |   Task 'staging_upload': Starting task run...
+2025-07-22T09:14:48.281826+00:00  | INFO     |   Task 'staging_upload': Finished task run for task with final state: 'TriggerFailed'
+2025-07-22T09:14:48.358473+00:00  | INFO     |   Task 'case(True)': Starting task run...
+2025-07-22T09:14:48.425986+00:00  | INFO     |   Task 'case(True)': Finished task run for task with final state: 'TriggerFailed'
+2025-07-22T09:14:48.493078+00:00  | INFO     |   Task 'skipped': Starting task run...
+2025-07-22T09:14:48.554306+00:00  | INFO     |   Task 'skipped': Finished task run for task with final state: 'TriggerFailed'
+2025-07-22T09:14:48.621106+00:00  | INFO     |   Task 'package_upload': Starting task run...
+2025-07-22T09:14:48.687952+00:00  | INFO     |   Task 'package_upload': Finished task run for task with final state: 'TriggerFailed'
+2025-07-22T09:14:48.756749+00:00  | INFO     |   Task 'upload': Starting task run...
+2025-07-22T09:14:48.822228+00:00  | INFO     |   Task 'upload': Finished task run for task with final state: 'TriggerFailed'
+2025-07-22T09:14:48.899113+00:00  | INFO     |   Task 'anaconda_version_info': Starting task run...
+2025-07-22T09:14:48.965462+00:00  | INFO     |   Task 'anaconda_version_info': Finished task run for task with final state: 'TriggerFailed'
+2025-07-22T09:14:49.031903+00:00  | INFO     |   Task 'success': Starting task run...
+2025-07-22T09:14:49.099154+00:00  | INFO     |   Task 'success': Finished task run for task with final state: 'TriggerFailed'
+2025-07-22T09:14:49.164921+00:00  | INFO     |   Task 'status': Starting task run...
+2025-07-22T09:14:49.236967+00:00  | INFO     |   Task 'status': Finished task run for task with final state: 'TriggerFailed'
+2025-07-22T09:14:49.312469+00:00  | INFO     |   Task 'List': Starting task run...
+2025-07-22T09:14:49.661138+00:00  | INFO     |   Task 'List': Finished task run for task with final state: 'Skipped'
+2025-07-22T09:14:50.029073+00:00  | INFO     |   Task 'Merge': Starting task run...
+2025-07-22T09:14:50.099058+00:00  | INFO     |   Task 'Merge': Finished task run for task with final state: 'TriggerFailed'
+2025-07-22T09:14:50.171185+00:00  | INFO     |   Task 'remove_temp_directory': Starting task run...
+2025-07-22T09:14:50.46502+00:00   | INFO     |   Task 'remove_temp_directory': Finished task run for task with final state: 'Success'
+2025-07-22T09:14:50.534882+00:00  | INFO     |   Flow run FAILED: some reference tasks failed.
+2025-07-22T09:14:50.535199+00:00  | INFO     |   Get SHA from git ref
+2025-07-22T09:14:50.701371+00:00  | INFO     |   Slack id is 
