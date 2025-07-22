@@ -20,6 +20,7 @@ requirements:
     - python
     - pip
     - setuptools
+    - setuptools_scm >=6.2
     - wheel
   run:
     - python
@@ -27,12 +28,7 @@ requirements:
     - pandas
     - geopandas >=0.13
     - rasterio
-    # Upper bound scipy<1.8.0 required for scikit-learn 1.7.0 compatibility.
-    # SciPy 1.8.0 removed several deprecated public APIs, including scipy.inf,
-    # leading to ImportError when importing 'inf' from 'scipy'
-    # See "Backwards incompatible changes" in SciPy 1.8.0 release notes:
-    # https://docs.scipy.org/doc/scipy/release/1.8.0-notes.html
-    - scipy >=0.11
+    - scipy
     - statsmodels
     - rasterstats
     # libpysal <4.10 is incompatible with scipy >=1.8.0 and leads to import errors
