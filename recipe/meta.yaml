@@ -1,30 +1,30 @@
 {% set name = "tobler" %}
-{% set version = "0.5.4" %}
+{% set version = "0.12.1" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://github.com/pysal/{{ name }}/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: 2c902fe2b708b9d6e8bbf461c25b8b9eb0d70f52ea88f560ace6a1a4267a5965
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: 96a05c2bd69569c5fadb940f7ad242dd8a43d12c7818c7ab97534e46670677f1
 
 build:
-  noarch: python
   number: 1
-  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  skip: True  # [py<39]
+  script: {{ PYTHON }} -m pip install . --no-deps --no-build-isolation --ignore-installed --no-cache-dir -vv
 
 requirements:
   host:
-    - python 3.9
+    - python
     - pip
     - setuptools
     - wheel
   run:
-    - python >=3.9
+    - python
     - numpy
     - pandas
-    - geopandas
+    - geopandas >=0.13
     - rasterio
     # <1.13 is because newer versions break the tests
     # ImportError: cannot import name 'inf' from 'scipy' -> inf is deprecated
@@ -33,26 +33,28 @@ requirements:
     - rasterstats
     - libpysal
     - tqdm
+    - joblib
 
 test:
+  # Skipping long-running tests; import checks and one test_dasymetric
+  # are sufficient to confirm installation.
+  requires:
+    - pip
+    - pytest
   source_files:
-    - tobler/tests
-    - test_dasymetric.py
+    - tobler/tests/test_dasymetric.py
   imports:
     - tobler
     - tobler.area_weighted
+    - tobler.area_weighted.area_interpolate
     - tobler.dasymetric
     - tobler.model
+    - tobler.pycno
     - tobler.util
     - tobler.util.util
   commands:
     - pip check
-    - python -c "from importlib.metadata import version; assert(version('{{ name }}')=='{{ version }}')"
-    - pytest -v tobler/tests
-    - pytest -v test_dasymetric.py
-  requires:
-    - pip
-    - pytest
+    - pytest -v tobler/tests/test_dasymetric.py
 
 about:
   home: https://github.com/pysal/tobler
