@@ -11,24 +11,25 @@ source:
 
 build:
   number: 1
-  skip: True  # [py<39]
+  skip: True  # [py<39 or py>=313]
   script: {{ PYTHON }} -m pip install . --no-deps --no-build-isolation --ignore-installed --no-cache-dir -vv
 
 requirements:
   host:
-    - python 3.9
+    - python
     - pip
     - setuptools
     - wheel
   run:
-    - python >=3.9
+    - python
     - numpy
     - pandas
     - geopandas >=0.13
     - rasterio
     # <1.13 is because newer versions break the tests
     # ImportError: cannot import name 'inf' from 'scipy' -> inf is deprecated
-    - scipy <1.13
+    # scipy <1.13 is available only up to Python 3.12. For Python 3.13+, only scipy >=1.13 is published in defaults.
+    - scipy <1.13  # [py<313]
     - statsmodels
     - rasterstats
     - libpysal
@@ -69,7 +70,7 @@ about:
 
 extra:
   skip-lints:
-    - remove_python_pinning
+    - remove_python_pinning # scipy <1.13 unavailable on Python >=3.13
   recipe-maintainers:
     - knaaptime
     - sjsrey
