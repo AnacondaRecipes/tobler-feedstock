@@ -16,12 +16,12 @@ build:
 
 requirements:
   host:
-    - python
+    - python >=3.9,<3.13
     - pip
     - setuptools
     - wheel
   run:
-    - python
+    - python >=3.9,<3.13
     - numpy
     - pandas
     - geopandas >=0.13
