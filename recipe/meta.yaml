@@ -69,6 +69,7 @@ test:
     - tobler.util.util
   commands:
     - pip check
+    - python -c "from importlib.metadata import version; assert(version('{{ name }}')=='{{ version }}')"
     - pytest -vv {{ test_skip }} tobler/tests
 
 about:
