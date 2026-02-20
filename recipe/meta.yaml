@@ -36,19 +36,18 @@ requirements:
     - statsmodels >=0.14
     - tqdm >=4.67
 
-# - test_area_interpolators: require dask_geopandas
-# - test_utils: require h3
-{% set skip_files = [
-    "tobler/tests/test_area_interpolators.py",
-    "tobler/tests/test_utils.py"
-] %}
+{% set test_skip = "" %}
+# require dask_geopandas
+{% set test_skip = test_skip + " --ignore=tobler/tests/test_area_interpolators.py" %}
+# require h3
+{% set test_skip = test_skip + " --ignore=tobler/tests/test_utils.py" %}
 
-# - test_masked_area_interpolate, test_glm_poisson: too long execution
-# - test_pycno_interpolate, test_custom_index: require astropy 
-{% set skip_keywords = [
-    "test_pycno_interpolate",
-    "test_custom_index"
-] %}
+# too long execution
+{% set test_skip = test_skip + " --deselect=tobler/tests/test_dasymetric.py::test_masked_area_interpolate" %}
+{% set test_skip = test_skip + " --deselect=tobler/tests/test_model.py::test_glm_poisson" %}
+# require astropy
+{% set test_skip = test_skip + " --deselect=tobler/tests/test_psycno.py::test_pycno_interpolate" %}
+{% set test_skip = test_skip + " --deselect=tobler/tests/test_psycno.py::test_custom_index" %}
 
 test:
   source_files:
@@ -70,7 +69,7 @@ test:
     - tobler.util.util
   commands:
     - pip check
-    - pytest -v tobler/tests {% for file in skip_files %} --ignore={{ file }}{% endfor %} -k "not ({{ skip_keywords | join(' or ') }})"
+    - pytest -v {{ test_skip }} tobler/tests
 
 about:
   home: https://github.com/pysal/tobler
