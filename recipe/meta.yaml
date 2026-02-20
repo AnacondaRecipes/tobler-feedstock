@@ -1,29 +1,18 @@
 {% set name = "tobler" %}
-{% set version = "0.13.0" %}
-{% set test_root = "tobler/tests" %}
-{% set skip_files = [
-  "tobler/tests/test_area_interpolators.py",
-  "tobler/tests/test_utils.py"
-] %}
-{% set skip_keywords = [
-  "test_masked_area_interpolate",
-  "test_glm_poisson",
-  "test_pycno_interpolate",
-  "test_custom_index"
-] %}
+{% set version = "0.12.1" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 8aac24aeb963151eb31cee6f24e6b9a83f7fc9ae0d4b92f08d7716308861ede9
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: 96a05c2bd69569c5fadb940f7ad242dd8a43d12c7818c7ab97534e46670677f1
 
 build:
   number: 0
   # Skip Python <3.10 due to libpysal <4.10 (noarch) causing import errors with scipy >=1.8.0
-  skip: true  # [py<311]
+  skip: true  # [py<310]
   script: {{ PYTHON }} -m pip install . --no-deps --no-build-isolation --ignore-installed --no-cache-dir -vv
 
 requirements:
@@ -32,29 +21,43 @@ requirements:
     - pip
     - setuptools >=61.0
     - setuptools_scm >=6.2
-    - setuptools-scm >=6.2
+    - wheel
   run:
     - python
-    - numpy >=2.0
-    - pandas >=2.2
-    - geopandas >=1.0
-    - rasterio >=1.4
-    - scipy >=1.13
-    - statsmodels >=0.14
-    - rasterstats >=0.20
+    - numpy
+    - pandas
+    - geopandas >=0.13
+    - rasterio
+    - scipy
+    - statsmodels
+    - rasterstats
     # libpysal <4.10 is incompatible with scipy >=1.8.0 and leads to import errors
     # See scipy 1.8.0 release notes for details
     - libpysal >=4.10
-    - tqdm >=4.67
-    - joblib >=1.4
+    - tqdm
+    - joblib
 
 # =======================
 # Test configuration
 # =======================
+{% set test_root = "tobler/tests" %}
+
 # - test_area_interpolators: require dask_geopandas
 # - test_utils: require h3
+{% set skip_files = [
+    "tobler/tests/test_area_interpolators.py",
+    "tobler/tests/test_utils.py"
+] %}
+
 # - test_masked_area_interpolate, test_glm_poisson: too long execution
-# - test_pycno_interpolate, test_custom_index: require astropy
+# - test_pycno_interpolate, test_custom_index: require astropy 
+{% set skip_keywords = [
+    "test_masked_area_interpolate",
+    "test_glm_poisson",
+    "test_pycno_interpolate",
+    "test_custom_index"
+] %}
+
 test:
   requires:
     - pip
