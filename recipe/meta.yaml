@@ -69,7 +69,7 @@ test:
     - tobler.util.util
   commands:
     - pip check
-    - pytest -v {{ test_skip }} tobler/tests
+    - pytest -vv {{ test_skip }} tobler/tests
 
 about:
   home: https://github.com/pysal/tobler
