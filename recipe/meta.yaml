@@ -11,8 +11,7 @@ source:
 
 build:
   number: 0
-  # Skip Python <3.10 due to libpysal <4.10 (noarch) causing import errors with scipy >=1.8.0
-  skip: true  # [py<310]
+  skip: true  # [py<311]
   script: {{ PYTHON }} -m pip install . --no-deps --no-build-isolation --ignore-installed --no-cache-dir -vv
 
 requirements:
