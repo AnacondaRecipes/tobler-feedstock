@@ -36,11 +36,6 @@ requirements:
     - statsmodels >=0.14
     - tqdm >=4.67
 
-# =======================
-# Test configuration
-# =======================
-{% set test_root = "tobler/tests" %}
-
 # - test_area_interpolators: require dask_geopandas
 # - test_utils: require h3
 {% set skip_files = [
@@ -56,14 +51,14 @@ requirements:
 ] %}
 
 test:
+  source_files:
+    - tobler/tests
   requires:
     - pip
     - pytest
     # bypass a test-only issue introduced with pandas versions >=3.0
     # E       AssertionError: assert <StringDtype(storage='python', na_value=nan)> == object
     - pandas <3.0
-  source_files:
-    - {{ test_root }}
   imports:
     - tobler
     - tobler.area_weighted
@@ -75,7 +70,7 @@ test:
     - tobler.util.util
   commands:
     - pip check
-    - pytest -v {{ test_root }}{% for file in skip_files %} --ignore={{ file }}{% endfor %} -k "not ({{ skip_keywords | join(' or ') }})"
+    - pytest -v tobler/tests {% for file in skip_files %} --ignore={{ file }}{% endfor %} -k "not ({{ skip_keywords | join(' or ') }})"
 
 about:
   home: https://github.com/pysal/tobler
