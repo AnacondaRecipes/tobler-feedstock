@@ -25,18 +25,16 @@ requirements:
     - wheel
   run:
     - python
-    - numpy
-    - pandas
-    - geopandas >=0.13
-    - rasterio
-    - scipy
-    - statsmodels
-    - rasterstats
-    # libpysal <4.10 is incompatible with scipy >=1.8.0 and leads to import errors
-    # See scipy 1.8.0 release notes for details
+    - geopandas >=1.0
+    - joblib >=1.4
     - libpysal >=4.10
-    - tqdm
-    - joblib
+    - numpy >=2.0
+    - pandas >=2.2
+    - rasterio >=1.4
+    - rasterstats >=0.20
+    - scipy >=1.13
+    - statsmodels >=0.14
+    - tqdm >=4.67
 
 # =======================
 # Test configuration
