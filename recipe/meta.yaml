@@ -61,6 +61,9 @@ test:
   requires:
     - pip
     - pytest
+    # bypass a test-only issue introduced with pandas versions >=3.0
+    # E       AssertionError: assert <StringDtype(storage='python', na_value=nan)> == object
+    - pandas <3.0
   source_files:
     - {{ test_root }}
   imports:
