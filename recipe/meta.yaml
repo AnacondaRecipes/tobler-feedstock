@@ -46,8 +46,8 @@ requirements:
 {% set test_skip = test_skip + " --deselect=tobler/tests/test_dasymetric.py::test_masked_area_interpolate" %}
 {% set test_skip = test_skip + " --deselect=tobler/tests/test_model.py::test_glm_poisson" %}
 # require astropy
-{% set test_skip = test_skip + " --deselect=tobler/tests/test_psycno.py::test_pycno_interpolate" %}
-{% set test_skip = test_skip + " --deselect=tobler/tests/test_psycno.py::test_custom_index" %}
+{% set test_skip = test_skip + " --deselect=tobler/tests/test_pycno.py::test_pycno_interpolate" %}
+{% set test_skip = test_skip + " --deselect=tobler/tests/test_pycno.py::test_custom_index" %}
 
 test:
   source_files:
