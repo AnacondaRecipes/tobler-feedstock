@@ -51,8 +51,6 @@ requirements:
 # - test_masked_area_interpolate, test_glm_poisson: too long execution
 # - test_pycno_interpolate, test_custom_index: require astropy 
 {% set skip_keywords = [
-    "test_masked_area_interpolate",
-    "test_glm_poisson",
     "test_pycno_interpolate",
     "test_custom_index"
 ] %}
