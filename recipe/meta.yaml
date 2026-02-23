@@ -1,18 +1,17 @@
 {% set name = "tobler" %}
-{% set version = "0.12.1" %}
+{% set version = "0.13.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 96a05c2bd69569c5fadb940f7ad242dd8a43d12c7818c7ab97534e46670677f1
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: 8aac24aeb963151eb31cee6f24e6b9a83f7fc9ae0d4b92f08d7716308861ede9
 
 build:
   number: 0
-  # Skip Python <3.10 due to libpysal <4.10 (noarch) causing import errors with scipy >=1.8.0
-  skip: true  # [py<310]
+  skip: true  # [py<311]
   script: {{ PYTHON }} -m pip install . --no-deps --no-build-isolation --ignore-installed --no-cache-dir -vv
 
 requirements:
@@ -21,49 +20,44 @@ requirements:
     - pip
     - setuptools >=61.0
     - setuptools_scm >=6.2
+    # setuptools_scm[toml]
+    - toml
     - wheel
   run:
     - python
-    - numpy
-    - pandas
-    - geopandas >=0.13
-    - rasterio
-    - scipy
-    - statsmodels
-    - rasterstats
-    # libpysal <4.10 is incompatible with scipy >=1.8.0 and leads to import errors
-    # See scipy 1.8.0 release notes for details
+    - geopandas >=1.0
+    - joblib >=1.4
     - libpysal >=4.10
-    - tqdm
-    - joblib
+    - numpy >=2.0
+    - pandas >=2.2
+    - rasterio >=1.4
+    - rasterstats >=0.20
+    - scipy >=1.13
+    - statsmodels >=0.14
+    - tqdm >=4.67
 
-# =======================
-# Test configuration
-# =======================
-{% set test_root = "tobler/tests" %}
+{% set test_skip = "" %}
+# require dask_geopandas
+{% set test_skip = test_skip + " --ignore=tobler/tests/test_area_interpolators.py" %}
+# require h3
+{% set test_skip = test_skip + " --ignore=tobler/tests/test_utils.py" %}
 
-# - test_area_interpolators: require dask_geopandas
-# - test_utils: require h3
-{% set skip_files = [
-    "tobler/tests/test_area_interpolators.py",
-    "tobler/tests/test_utils.py"
-] %}
-
-# - test_masked_area_interpolate, test_glm_poisson: too long execution
-# - test_pycno_interpolate, test_custom_index: require astropy 
-{% set skip_keywords = [
-    "test_masked_area_interpolate",
-    "test_glm_poisson",
-    "test_pycno_interpolate",
-    "test_custom_index"
-] %}
+# too long execution
+{% set test_skip = test_skip + " --deselect=tobler/tests/test_dasymetric.py::test_masked_area_interpolate" %}
+{% set test_skip = test_skip + " --deselect=tobler/tests/test_model.py::test_glm_poisson" %}
+# require astropy
+{% set test_skip = test_skip + " --deselect=tobler/tests/test_pycno.py::test_pycno_interpolate" %}
+{% set test_skip = test_skip + " --deselect=tobler/tests/test_pycno.py::test_custom_index" %}
 
 test:
+  source_files:
+    - tobler/tests
   requires:
     - pip
     - pytest
-  source_files:
-    - {{ test_root }}
+    # bypass a test-only issue introduced with pandas versions >=3.0
+    # E       AssertionError: assert <StringDtype(storage='python', na_value=nan)> == object
+    - pandas <3.0
   imports:
     - tobler
     - tobler.area_weighted
@@ -75,7 +69,8 @@ test:
     - tobler.util.util
   commands:
     - pip check
-    - pytest -v {{ test_root }}{% for file in skip_files %} --ignore={{ file }}{% endfor %} -k "not ({{ skip_keywords | join(' or ') }})"
+    - python -c "from importlib.metadata import version; assert(version('{{ name }}')=='{{ version }}')"
+    - pytest -vv {{ test_skip }} tobler/tests
 
 about:
   home: https://github.com/pysal/tobler
@@ -83,8 +78,7 @@ about:
   license_family: BSD
   license_file: LICENSE
   summary: Tobler is a python package for areal interpolation, dasymetric mapping, and change of support.
-  description: |
-    Tobler is a python package for areal interpolation, dasymetric mapping, and change of support.
+  description: Tobler is a python package for areal interpolation, dasymetric mapping, and change of support.
   doc_url: https://pysal.org/tobler
   dev_url: https://github.com/pysal/tobler
 
