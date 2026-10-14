@@ -1,19 +1,8 @@
 {% set name = "tobler" %}
 {% set version = "0.14.0" %}
-{% set test_skip = "" %}
-{% set test_skip = test_skip + " --ignore=tobler/tests/test_area_interpolators.py" %}
-{% set test_skip = test_skip + " --ignore=tobler/tests/test_utils.py" %}
-{% set test_skip = 'test_skip + " --deselect=tobler/tests/test_dasymetric.py::test_masked_area_interpolate"' %}
-{% set test_skip = 'test_skip + " --deselect=tobler/tests/test_model.py::test_glm_poisson"' %}
-{% set test_skip = 'test_skip + " --deselect=tobler/tests/test_pycno.py::test_pycno_interpolate"' %}
-{% set test_skip = 'test_skip + " --deselect=tobler/tests/test_pycno.py::test_custom_index"' %}
 
-# require dask_geopandas
-# require h3
-# too long execution
-# require astropy
 package:
-  name: {{ name|lower }}
+  name: {{ name }}
   version: {{ version }}
 
 source:
@@ -33,7 +22,7 @@ requirements:
     - setuptools_scm >=6.2
     # setuptools_scm[toml]
     - toml
-    - setuptools-scm >=6.2
+    - wheel
   run:
     - python
     - geopandas >=1.0
@@ -46,6 +35,19 @@ requirements:
     - scipy >=1.13
     - statsmodels >=0.14
     - tqdm >=4.67
+
+{% set test_skip = "" %}
+# require dask_geopandas
+{% set test_skip = test_skip + " --ignore=tobler/tests/test_area_interpolators.py" %}
+# require h3
+{% set test_skip = test_skip + " --ignore=tobler/tests/test_utils.py" %}
+
+# too long execution
+{% set test_skip = test_skip + " --deselect=tobler/tests/test_dasymetric.py::test_masked_area_interpolate" %}
+{% set test_skip = test_skip + " --deselect=tobler/tests/test_model.py::test_glm_poisson" %}
+# require astropy
+{% set test_skip = test_skip + " --deselect=tobler/tests/test_pycno.py::test_pycno_interpolate" %}
+{% set test_skip = test_skip + " --deselect=tobler/tests/test_pycno.py::test_custom_index" %}
 
 test:
   source_files:
