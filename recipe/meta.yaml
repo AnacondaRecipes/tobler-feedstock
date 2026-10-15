@@ -47,6 +47,9 @@ requirements:
 # too long execution
 {% set test_skip = test_skip + " --deselect=tobler/tests/test_dasymetric.py::test_masked_area_interpolate" %}
 {% set test_skip = test_skip + " --deselect=tobler/tests/test_model.py::test_glm_poisson" %}
+# require pointpats
+{% set test_skip = test_skip + " --deselect=tobler/tests/test_dotdensity.py::test_draw_points_normal_cluster" %}
+{% set test_skip = test_skip + " --deselect=tobler/tests/test_dotdensity.py::test_draw_points_poisson_cluster" %}
 
 test:
   source_files:
