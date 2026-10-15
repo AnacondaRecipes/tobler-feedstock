@@ -41,13 +41,12 @@ requirements:
 {% set test_skip = test_skip + " --ignore=tobler/tests/test_area_interpolators.py" %}
 # require h3
 {% set test_skip = test_skip + " --ignore=tobler/tests/test_utils.py" %}
+# require astropy
+{% set test_skip = test_skip + " --ignore=tobler/tests/test_pycno.py" %}
 
 # too long execution
 {% set test_skip = test_skip + " --deselect=tobler/tests/test_dasymetric.py::test_masked_area_interpolate" %}
 {% set test_skip = test_skip + " --deselect=tobler/tests/test_model.py::test_glm_poisson" %}
-# require astropy
-{% set test_skip = test_skip + " --deselect=tobler/tests/test_pycno.py::test_pycno_interpolate" %}
-{% set test_skip = test_skip + " --deselect=tobler/tests/test_pycno.py::test_custom_index" %}
 
 test:
   source_files:
