@@ -1,17 +1,17 @@
 {% set name = "tobler" %}
-{% set version = "0.13.0" %}
+{% set version = "0.14.0" %}
 
 package:
-  name: {{ name|lower }}
+  name: {{ name }}
   version: {{ version }}
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 8aac24aeb963151eb31cee6f24e6b9a83f7fc9ae0d4b92f08d7716308861ede9
+  sha256: 9d199bee5f14fed64ef392700e15ea72dfb68543f2293b505071ee6d2f62efe9
 
 build:
-  number: 1
-  skip: true  # [py<311]
+  number: 0
+  skip: true  # [py<312]
   script: {{ PYTHON }} -m pip install . --no-deps --no-build-isolation --ignore-installed --no-cache-dir -vv
 
 requirements:
@@ -41,13 +41,15 @@ requirements:
 {% set test_skip = test_skip + " --ignore=tobler/tests/test_area_interpolators.py" %}
 # require h3
 {% set test_skip = test_skip + " --ignore=tobler/tests/test_utils.py" %}
+# require astropy
+{% set test_skip = test_skip + " --ignore=tobler/tests/test_pycno.py" %}
 
 # too long execution
 {% set test_skip = test_skip + " --deselect=tobler/tests/test_dasymetric.py::test_masked_area_interpolate" %}
 {% set test_skip = test_skip + " --deselect=tobler/tests/test_model.py::test_glm_poisson" %}
-# require astropy
-{% set test_skip = test_skip + " --deselect=tobler/tests/test_pycno.py::test_pycno_interpolate" %}
-{% set test_skip = test_skip + " --deselect=tobler/tests/test_pycno.py::test_custom_index" %}
+# require pointpats
+{% set test_skip = test_skip + " --deselect=tobler/tests/test_dotdensity.py::test_draw_points_normal_cluster" %}
+{% set test_skip = test_skip + " --deselect=tobler/tests/test_dotdensity.py::test_draw_points_poisson_cluster" %}
 
 test:
   source_files:
